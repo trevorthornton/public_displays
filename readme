@@ -1,0 +1,5 @@
+to start, run this:
+rackup
+
+then point browser to:
+localhost:9292

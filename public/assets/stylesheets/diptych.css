@@ -1,0 +1,49 @@
+body {
+  background-color: #000;
+}
+
+main {
+  height: 100%;
+}
+
+.diptych {
+  height: 300px;
+  /*width: 1000px;*/
+  position: relative;
+  overflow: auto;
+}
+
+.diptych .panel {
+  float: left;
+  width: 50%;
+  overflow: auto;
+}
+
+.diptych .panel1 {
+  float: left;
+  width: 50%;
+  overflow: auto;
+}
+
+.diptych .panel .video-wrapper {
+}
+
+.diptych .panel-1 .video-wrapper {
+  float: right;
+}
+
+.diptych .panel-2 .video-wrapper {
+  float: left;
+}
+
+
+
+.diptych .panel .video-wrapper  video {
+  height: 300px;
+}
+
+
+.controls {
+  clear: both;
+  text-align: center;
+}

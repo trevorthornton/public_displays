@@ -14,6 +14,16 @@ class DirectoryWatcher
     @filenames = []
   end
 
+
+  def copied_files
+    files = []
+    Dir.foreach(@destination_path) do |filename|
+      files << filename
+    end
+    files
+  end
+
+
   def file_list
     match = Regexp.new("\.[mp4v]{3,4}$")
     Dir.foreach(@source_path) do |filename|

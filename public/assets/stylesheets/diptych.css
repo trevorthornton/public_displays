@@ -7,7 +7,7 @@ main {
 }
 
 .diptych {
-  height: 300px;
+  height: 540px;
   /*width: 1000px;*/
   position: relative;
   overflow: auto;
@@ -39,7 +39,7 @@ main {
 
 
 .diptych .panel .video-wrapper  video {
-  height: 300px;
+  height: 540px;
 }
 
 

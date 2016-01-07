@@ -114,10 +114,6 @@ $(document).ready(function() {
       var player1Complete = false;
       var player2Complete = false;
 
-      $(players).each(function() {
-        this.volume = 0;
-      });
-
       var playNext = function() {
         var next = getNext();
         current = next;
@@ -190,10 +186,54 @@ $(document).ready(function() {
       });
 
       updatePlaylist(playNext);
+    },
+
+
+    bradybunch: function() {
+
+      var players = $(this).find('video');
+
+      var testVid = "1L4A7202_4x3.mp4";
+
+      $(players).each(function() {
+        this.src = videoPath + testVid;
+        this.play();
+
+        var playNext = function(player) {
+          var next = getNext();
+          console.log("now playing: " + next);
+
+          player.src = videoPath + next;
+          player.play();
+
+          $(player).on('play', function() {
+            if (played.indexOf(current) < 0) {
+              played.push(current);
+            }
+          });
+        }
+
+
+        $(this).on('error', function() {
+          // skip.push(current);
+          // removeFromPlayed(current);
+          // console.log('ERRR');
+          // playNext(this);
+        });
+
+      });
+
     }
+
+
   });
 
 
-  $('.diptych').diptych();
+  var diptych = $('.diptych');
+  if (diptych.length > 0) {
+    diptych.diptych();
+  }
+
+  $('.bradybunch').bradybunch();
 
 });

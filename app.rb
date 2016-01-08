@@ -8,8 +8,13 @@ class DirectoryWatcher
   attr_accessor :files, :directory_path
 
   def initialize
-    @source_path = "/Users/trthorn2/Dropbox/private/pd_tmp"
-    @destination_path = "/Users/trthorn2/webapps/exp/pd/public_displays/public/assets/video/"
+
+    # CONFIGUABLES
+    @source_path = "/Users/trthorn2/Google\ Drive/public_displays"
+    @destination_path = "/Users/trthorn2/webapps/exp/pd/public_displays"
+    # END CONFIGUABLES
+
+    @destination_path += "/public/assets/video/"
     @files = []
     @filenames = []
   end

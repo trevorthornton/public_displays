@@ -1,6 +1,8 @@
 $(document).ready(function() {
 
+  // CONFIGUABLES
   var videoPath = "http://localhost:9292/assets/video/"
+  // END CONFIGUABLES
 
   var playlist;
   var repeatIndex = 0;

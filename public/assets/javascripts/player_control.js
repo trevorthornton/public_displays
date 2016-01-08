@@ -187,7 +187,9 @@ $(document).ready(function() {
         forceRestart();
       });
 
-      updatePlaylist(playNext);
+      $(player1).on('loadeddata', function() {
+        updatePlaylist(playNext);
+      });
     },
 
 
@@ -197,7 +199,15 @@ $(document).ready(function() {
 
       var testVid = "1L4A7202_4x3.mp4";
 
+      var filenameFromUrl = function(url) {
+        var parts = url.split('/');
+        return parts[parts.length -1];
+      }
+
       $(players).each(function() {
+
+        var player = this;
+
         this.src = videoPath + testVid;
         this.play();
 
@@ -215,12 +225,12 @@ $(document).ready(function() {
           });
         }
 
-
         $(this).on('error', function() {
-          // skip.push(current);
-          // removeFromPlayed(current);
-          // console.log('ERRR');
-          // playNext(this);
+          var filename = filenameFromUrl(player.src);
+          skip.push(filename);
+          removeFromPlayed(filename);
+          console.log('ERRR');
+          playNext(player);
         });
 
       });
